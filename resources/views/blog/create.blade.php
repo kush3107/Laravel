@@ -1,12 +1,11 @@
 @extends('layouts.blog')
 @section('title')
-KUPRA | Create Blog
+Create Blog
 @stop
 @section('content')
-
-<form role="form" action="/articles" method="post">
+<form action="/articles" method="post">
 <div class="form-group">
-    <label for="title">Title</label>
+    <label for="title">Title:</label>
     <input type="text" id="title" class="form-control" name="title" placeholder="Title of your blog">
 </div>
 
@@ -14,7 +13,7 @@ KUPRA | Create Blog
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 <div class="form-group">
-    <label for="content">Content</label>
+    <label for="content">Content:</label>
     <textarea class="form-control" id="content" name="content" placeholder="Content here"></textarea>
 
 </div>

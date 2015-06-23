@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
+use App\Tag;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Input;
 
-class BlogController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +17,21 @@ class BlogController extends Controller
      */
     public function index()
     {
-
-        $blogs=Blog::all();
-
-        return view('blog.view',compact('blogs'));
+          dd(Tag::all());
+//        $tag=new Tag();
+//        $tag->name='News';
+//        $tag->slug='news';
+//        $tag->save();
+//
+//        $tag=new Tag();
+//        $tag->name='Technology';
+//        $tag->slug='technology';
+//        $tag->save();
+//
+//        $tag=new Tag();
+//        $tag->name='Sports';
+//        $tag->slug='sports';
+//        $tag->save();
     }
 
     /**
@@ -31,7 +41,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-       return view('blog.create');
+        //
     }
 
     /**
@@ -39,17 +49,9 @@ class BlogController extends Controller
      *
      * @return Response
      */
-    public function store(Requests\BlogCreateRequest $request)
+    public function store()
     {
-        $blog = new Blog();
-        $blog->title = Input::get('title');
-        $blog->content = Input::get('content');
-       // dd($blog);
-        $blog->save();
-        $blog->tags()->attach([1, 3]);
-        $blog->save();
-        return "Your blog created successfully! Your id is".$blog->id;
-
+        //
     }
 
     /**
@@ -60,8 +62,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $blog=Blog::find($id);
-        return view('blog.blogView',compact('blog'));
+        //
     }
 
     /**
@@ -72,8 +73,7 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        $blog=Blog::find($id);
-        return view('blog.edit',compact('blog'));
+        //
     }
 
     /**
@@ -95,6 +95,6 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        Blog::destroy($id);
+        //
     }
 }

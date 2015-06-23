@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('articles','BlogController');
+Route::resource('tags','TagController');

@@ -1,6 +1,6 @@
 @extends('layouts.blog')
 @section('title')
-KUPRA | Blogs
+Blogs
 @stop
 @section('header')
 <a href="/articles" class="pull-right">Home</a>

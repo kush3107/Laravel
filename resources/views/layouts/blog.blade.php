@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>@yield('title')</title>
+    <title>KUPRA | @yield('title')</title>
 
     <!-- Bootstrap -->
 
@@ -21,10 +21,22 @@
 <div class="jumbotron">
     @yield('header')
 </div>
+<ul>
+@foreach($errors->all() as $error)
+
+<div class="alert alert-danger">
+<li> {{ $error}} </li>
+</div>
+@endforeach
+</ul>
 @yield('content')
 <div class="footer">
+
 <p class="text-center">About Us | Policy Terms | Contact Us | Terms of Service</p>
+
+    <p class="pull-right">&copy; Copyright KUPRA Inc.</p>
 </div>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
